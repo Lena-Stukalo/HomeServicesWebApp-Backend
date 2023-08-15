@@ -29,6 +29,10 @@ const contactSchma = new Schema(
       type: Number,
       required: [true, "Set sum for order"],
     },
+    done: {
+      type: Boolean,
+      default: false,
+    },
     owner: {
       type: Schema.Types.ObjectId,
       ref: "user",
