@@ -9,7 +9,8 @@ const listOrders = async (req, res, next) => {
     skip,
     limit,
   }).populate("owner", "email subscription");
-  res.json(result);
+  const total = await Order.countDocuments({ owner });
+  res.json({ result, total });
   if (!result) {
     throw RequestError(404, "Not found");
   }
