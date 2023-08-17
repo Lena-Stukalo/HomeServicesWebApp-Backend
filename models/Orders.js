@@ -29,7 +29,7 @@ const contactSchma = new Schema(
       type: Number,
       required: [true, "Set sum for order"],
     },
-    isdone: {
+    done: {
       type: Boolean,
       default: false,
     },
@@ -48,7 +48,7 @@ const addSchema = Joi.object({
   description: Joi.string().required(),
   date: Joi.string().required(),
   sum: Joi.number().required(),
-  isdone: Joi.boolean(),
+  done: Joi.boolean(),
 });
 
 const schemas = {
