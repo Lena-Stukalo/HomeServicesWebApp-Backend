@@ -29,7 +29,7 @@ const contactSchma = new Schema(
       type: Number,
       required: [true, "Set sum for order"],
     },
-    done: {
+    isdone: {
       type: Boolean,
       default: false,
     },
@@ -48,15 +48,11 @@ const addSchema = Joi.object({
   description: Joi.string().required(),
   date: Joi.string().required(),
   sum: Joi.number().required(),
-  done: Joi.boolean,
-});
-const updateFavoriteSchema = Joi.object({
-  favorite: Joi.boolean().required(),
+  isdone: Joi.boolean(),
 });
 
 const schemas = {
   addSchema,
-  updateFavoriteSchema,
 };
 contactSchma.post("save", hendleSave);
 const Order = model("order", contactSchma);
