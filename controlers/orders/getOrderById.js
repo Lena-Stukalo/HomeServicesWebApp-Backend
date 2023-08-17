@@ -6,6 +6,6 @@ const getOrderById = async (req, res, next) => {
   if (!result) {
     throw RequestError(404, "Not found");
   }
-  res.json(result);
+  res.json({});
 };
 module.exports = getOrderById;

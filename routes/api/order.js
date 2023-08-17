@@ -31,7 +31,7 @@ router.delete(
   cntrlWrapper(cntrl.removeOrder)
 );
 
-router.put(
+router.patch(
   "/:orderId",
   authenticate,
   isValidId,
