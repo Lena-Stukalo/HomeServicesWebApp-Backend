@@ -48,6 +48,7 @@ const addSchema = Joi.object({
   description: Joi.string().required(),
   date: Joi.string().required(),
   sum: Joi.number().required(),
+  done: Joi.boolean,
 });
 const updateFavoriteSchema = Joi.object({
   favorite: Joi.boolean().required(),
